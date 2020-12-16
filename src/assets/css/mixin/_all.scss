@@ -1,0 +1,322 @@
+*{
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline:none !important;
+}
+body{
+  // overflow:hidden !important;
+  background: #f7fbfc !important;
+}
+
+$full-width:100%;
+
+$CountTo100: '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100';
+
+$blue: #0066e6;
+$light-blue: #3da5d9;
+$light-green: #43cea2;
+$light-orange:#ea5734;
+
+
+$text-colors: 
+  "blue" #0066e6 #fff !important,
+  "light-blue" #3da5d9 #fff !important,
+  "light-green" #43cea2 #fff !important,
+  "light-orange" #ea5734 #fff !important,
+  "blue-transparent" transparent #0066e6 !important,
+  "light-blue-transparent" transparent #3da5d9  !important,
+  "light-green-transparent" transparent #43cea2  !important,
+  "light-orange-transparent" transparent #ea5734  !important;
+
+$border-colors: 
+  "blue" #0066e6 !important,
+  "light-blue" #3da5d9 !important,
+  "light-green" #43cea2 !important,
+  "light-orange" #ea5734 !important;
+
+@each $name,$backgroundColor, $color, $important in $text-colors{
+  .text-color-#{$name} {
+    color: $backgroundColor $important;
+  }
+}
+
+@each $name,$backgroundColor, $color, $important in $text-colors{
+  .btn-#{$name} {
+    background: $backgroundColor $important;
+    color: $color $important;
+    padding: .4em .7em $important;
+    box-shadow:none $important;
+  }
+}
+
+@each $name,$borderColor, $important in $border-colors{
+  .btn-border-#{$name} {
+    border: 1px solid $borderColor $important;
+  }
+}
+
+/**
+*  ( 1 To 100 Px, REM, Percentage, VW ) Use For Loop
+*/
+@each $count in $CountTo100{ 
+  // For Margin Loop use Pixel
+  .m-t-#{$count}{
+    margin-top: #{$count + 'px'} !important;
+  } 
+  .m-b-#{$count}{
+    margin-bottom: #{$count + 'px'} !important;
+  } 
+  .m-l-#{$count}{
+    margin-left: #{$count + 'px'} !important;
+  } 
+  .m-r-#{$count}{
+    margin-right: #{$count + 'px'} !important;
+  }
+
+  // For Margin Loop use Percentage
+  .m-t-p-#{$count}{
+    margin-top: #{$count + '%'} !important;
+  } 
+  .m-b-p-#{$count}{
+    margin-bottom: #{$count + '%'} !important;
+  } 
+  .m-l-p-#{$count}{
+    margin-left: #{$count + '%'} !important;
+  } 
+  .m-r-p-#{$count}{
+    margin-right: #{$count + '%'} !important;
+  } 
+
+  // For Margin Loop use REM
+  .m-t-rem-#{$count}{
+    margin-top: #{$count + 'rem'} !important;
+  } 
+  .m-b-rem-#{$count}{
+    margin-bottom: #{$count + 'rem'} !important;
+  } 
+  .m-l-rem-#{$count}{
+    margin-left: #{$count + 'rem'} !important;
+  } 
+  .m-r-rem-#{$count}{
+    margin-right: #{$count + 'rem'} !important;
+  } 
+
+  // For Margin Loop use VH, VW
+  .m-t-vh-#{$count}{
+    margin-top: #{$count + 'vh'} !important;
+  } 
+  .m-b-vh-#{$count}{
+    margin-bottom: #{$count + 'vh'} !important;
+  } 
+  .m-l-vw-#{$count}{
+    margin-left: #{$count + 'vw'} !important;
+  } 
+  .m-r-vw-#{$count}{
+    margin-right: #{$count + 'vw'} !important;
+  } 
+
+  // For Padding Loop use Pixel
+  .p-t-#{$count}{
+    padding-top: #{$count + 'px'} !important;
+  } 
+  .p-b-#{$count}{
+    padding-bottom: #{$count + 'px'} !important;
+  } 
+  .p-l-#{$count}{
+    padding-left: #{$count + 'px'} !important;
+  } 
+  .p-r-#{$count}{
+    padding-right: #{$count + 'px'} !important;
+  }
+  .p-y-#{$count}{
+    padding-top: #{$count + 'px'} !important;
+    padding-bottom: #{$count + 'px'} !important;
+  } 
+
+  // For Padding Loop use Percentage
+  .p-t-p-#{$count}{
+    padding-top: #{$count + '%'} !important;
+  } 
+  .p-b-p-#{$count}{
+    padding-bottom: #{$count + '%'} !important;
+  } 
+  .p-l-p-#{$count}{
+    padding-left: #{$count + '%'} !important;
+  } 
+  .p-r-p-#{$count}{
+    padding-right: #{$count + '%'} !important;
+  } 
+  .p-y-p-#{$count}{
+    padding-top: #{$count + '%'} !important;
+    padding-bottom: #{$count + '%'} !important;
+  } 
+
+  // For Padding Loop use REM
+  .p-t-rem-#{$count}{
+    padding-top: #{$count + 'rem'} !important;
+  } 
+  .p-b-rem-#{$count}{
+    padding-bottom: #{$count + 'rem'} !important;
+  } 
+  .p-l-rem-#{$count}{
+    padding-left: #{$count + 'rem'} !important;
+  } 
+  .p-r-rem-#{$count}{
+    padding-right: #{$count + 'rem'} !important;
+  } 
+  .p-y-rem-#{$count}{
+    padding-top: #{$count + 'rem'} !important;
+    padding-bottom: #{$count + 'rem'} !important;
+  } 
+
+  // For Padding Loop use VH, VW
+  .p-t-vh-#{$count}{
+    padding-top: #{$count + 'vh'} !important;
+  } 
+  .p-b-vh-#{$count}{
+    padding-bottom: #{$count + 'vh'} !important;
+  } 
+  .p-l-vw-#{$count}{
+    padding-left: #{$count + 'vw'} !important;
+  } 
+  .p-r-vw-#{$count}{
+    padding-right: #{$count + 'vw'} !important;
+  } 
+  .p-y-vh-#{$count}{
+    padding-top: #{$count + 'vh'} !important;
+    padding-bottom: #{$count + 'vh'} !important;
+  } 
+
+  // Width Define 
+  .w-#{$count} {
+    width: #{$count + 'px'} !important;
+  }
+  .w-p-#{$count} {
+    width: #{$count + '%'} !important;
+  }
+  .w-rem-#{$count} {
+    width: #{$count + 'rem'} !important;
+  }
+  .w-vw-#{$count} {
+    width: #{$count + 'vw'} !important;
+  }
+  // Fonts Size
+  .f-#{$count}{
+    font-size: #{$count + 'px'} !important;
+  } 
+  .f-p-#{$count}{
+    font-size: #{$count + '%'} !important;
+  } 
+  .f-rem-#{$count}{
+    font-size: #{$count + 'rem'} !important;
+  } 
+  .f-vw-#{$count}{
+    font-size: #{$count + 'vw'} !important;
+  } 
+  .f-vw-1-#{$count}{
+    font-size: #{$count+'.1' + 'vw'} !important;
+  } 
+  .f-vw-2-#{$count}{
+    font-size: #{$count+'.2' + 'vw'} !important;
+  } 
+  .f-vw-3-#{$count}{
+    font-size: #{$count+'.3' + 'vw'} !important;
+  } 
+  .f-vw-4-#{$count}{
+    font-size: #{$count+'.4' + 'vw'} !important;
+  } 
+  .f-vw-5-#{$count}{
+    font-size: #{$count+'.5' + 'vw'} !important;
+  } 
+  .f-vw-6-#{$count}{
+    font-size: #{$count+'.6' + 'vw'} !important;
+  } 
+  .f-vw-7-#{$count}{
+    font-size: #{$count+'.7' + 'vw'} !important;
+  } 
+  .f-vw-8-#{$count}{
+    font-size: #{$count+'.8' + 'vw'} !important;
+  } 
+  .f-vw-9-#{$count}{
+    font-size: #{$count+'.9' + 'vw'} !important;
+  } 
+}
+
+/**
+*  ( 1 To 100 Px, REM, Percentage, VW ) Use For Loop Media Queries
+*/
+@media (max-width: 768px) {
+  @each $count in $CountTo100 {
+    // For Padding Loop use Pixel
+    .p-t-sm-#{$count}{
+      padding-top: #{$count + 'px'} !important;
+    } 
+    .p-b-sm-#{$count}{
+      padding-bottom: #{$count + 'px'} !important;
+    } 
+    .p-l-sm-#{$count}{
+      padding-left: #{$count + 'px'} !important;
+    } 
+    .p-r-sm-#{$count}{
+      padding-right: #{$count + 'px'} !important;
+    }
+
+    // For Padding Loop use Percentage
+    .p-t-sm-p-#{$count}{
+      padding-top: #{$count + '%'} !important;
+    } 
+    .p-b-sm-p-#{$count}{
+      padding-bottom: #{$count + '%'} !important;
+    } 
+    .p-l-sm-p-#{$count}{
+      padding-left: #{$count + '%'} !important;
+    } 
+    .p-r-sm-p-#{$count}{
+      padding-right: #{$count + '%'} !important;
+    } 
+
+    // For Padding Loop use REM
+    .p-t-sm-rem-#{$count}{
+      padding-top: #{$count + 'rem'} !important;
+    } 
+    .p-b-sm-rem-#{$count}{
+      padding-bottom: #{$count + 'rem'} !important;
+    } 
+    .p-l-sm-rem-#{$count}{
+      padding-left: #{$count + 'rem'} !important;
+    } 
+    .p-r-sm-rem-#{$count}{
+      padding-right: #{$count + 'rem'} !important;
+    } 
+
+    // For Padding Loop use VH, VW
+    .p-t-sm-vh-#{$count}{
+      padding-top: #{$count + 'vh'} !important;
+    } 
+    .p-b-sm-vh-#{$count}{
+      padding-bottom: #{$count + 'vh'} !important;
+    } 
+    .p-l-sm-vw-#{$count}{
+      padding-left: #{$count + 'vw'} !important;
+    } 
+    .p-r-sm-vw-#{$count}{
+      padding-right: #{$count + 'vw'} !important;
+    } 
+
+    // Width Define for Small
+    .w-sm-#{$count} {
+      width: #{$count + 'px'} !important;
+    }
+    .w-sm-p-#{$count} {
+      width: #{$count + '%'} !important;
+    }
+    .w-sm-rem-#{$count} {
+      width: #{$count + 'rem'} !important;
+    }
+    .w-sm-vw-#{$count} {
+      width: #{$count + 'vw'} !important;
+    }
+  }
+}

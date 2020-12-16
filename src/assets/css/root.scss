@@ -1,0 +1,20 @@
+/**
+ *  Base Scss File added
+ */
+@import './mixin/base';
+
+// Display Include [ grid, flex, block ] Start here
+
+@include select-display(grid);
+@include select-display(flex);
+@include select-display(block);
+
+// Display Include [ Grid, Flex, Block ] Endz here
+
+// Anchor tag Styling Code 
+@include noneTextDecoration('main-nav>li>a', none, pointer, true);
+
+/**
+* Import Dashboard Scss File
+*/
+@import './mixin/dashboard';

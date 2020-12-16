@@ -1,0 +1,108 @@
+@import './all';
+
+@mixin selectivePosition($position, $width){
+    position:$position;
+    width:$width;
+}
+
+@mixin imageRounded ($width,$height){
+    width:$width;
+    height:$height;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+@mixin gridTemplateColumns($col-value, $gridGap){
+    grid-template-columns: $col-value;
+    grid-gap:$gridGap;
+}
+@mixin samePosition($position, $width, $padding, $min-height:false){
+    position: $position;
+    width:$width;
+    @if $min-height {
+        min-height: 100%;
+    }
+    padding:$padding;
+}
+
+@mixin select-display( $displayName ){
+    .display-#{$displayName}{
+        display: $displayName !important;
+    }   
+}
+
+@mixin noneTextDecoration($className, $none, $pointer, $color:false){
+    .#{$className},.#{$className}:hover, .#{$className}:visited, .#{$className}:active,.#{$className}:link {
+        cursor:$pointer;
+        text-decoration: $none;
+        @if $color {
+            color: $black;
+        }
+    }
+}
+
+@mixin center( $center , $margin:false ){
+    width: $center!important;
+    @if $margin {
+        margin: 0 auto;
+    }
+}
+
+@mixin borderName( $name, $property , $value ){
+    .border#{$name}{
+        border-#{$property}: $value;
+    }
+}
+
+@mixin fontWeight( $name,  $value ){
+    .fontWeight-#{$name}{
+        font-weight: $value;
+    }
+}
+
+// Mixin for Display Flexbox
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  // Mixin for Inline Flex
+  @mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  
+  // Mixin for Flex Direction
+  @mixin flex-dir($value: row) {
+    @if $value == row-reverse {
+      -webkit-box-direction: reverse;
+      -webkit-box-orient: horizontal;
+      -moz-box-direction: reverse;
+      -moz-box-orient: horizontal;
+    } @else if $value == column {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -moz-box-direction: normal;
+      -moz-box-orient: vertical;
+    } @else if $value == column-reverse {
+      -webkit-box-direction: reverse;
+      -webkit-box-orient: vertical;
+      -moz-box-direction: reverse;
+      -moz-box-orient: vertical;
+    } @else {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -moz-box-direction: normal;
+      -moz-box-orient: horizontal;
+    }
+    -webkit-flex-direction: $value;
+    -ms-flex-direction: $value;
+    flex-direction: $value;
+  }
+  
